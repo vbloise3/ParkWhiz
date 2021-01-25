@@ -8,7 +8,9 @@ public class Hello implements RequestHandler<Object, String> {
     @Override
     public String handleRequest(Object input, Context context) {
     	context.getLogger().log("Input: " + input);
-    	String output = "Hello, " + input + "!" + " You parking loser!";
+    	String tempDate = String.valueOf(input).substring(6);
+    	String targetDate=tempDate.substring(0,tempDate.length()-1);
+    	String output = "Hello, " + targetDate + "!" + " You parking loser!";
     	return output;	
     }
 
